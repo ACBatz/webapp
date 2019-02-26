@@ -1,0 +1,7 @@
+.cesium-widget-credits {
+    visibility: hidden;
+}
+
+.cesium-widget canvas {
+    width: 100%;
+}

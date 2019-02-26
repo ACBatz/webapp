@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
-import logo from '../img/logo.svg';
-import './App.css';
+import React from "react";
+import { hot } from "react-hot-loader";
+import { Viewer, Entity } from "resium";
+import { Cartesian3 } from "cesium";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = () => (
+	<Viewer full>
+		<Entity
+      name="Tokyo"
+      position={Cartesian3.fromDegrees(139.767052, 35.681167, 100)}
+      point={{ pixelSize: 10 }}
+      description="hoge"
+    />
+	</Viewer>
+);
 
-export default App;
+export default hot(module)(App);

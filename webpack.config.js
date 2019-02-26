@@ -1,15 +1,32 @@
+const path = require('path');
 const webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
+const cesiumSource = 'node_modules/cesium/Source';
+const cesiumWorkers = '../Build/Cesium/Workers';
 
 const config = {
     entry:  __dirname + '/src/js/index.js',
     output: {
         path: 'B:\\UCCS\\Web\\cs5260\\server\\static',
         filename: 'bundle.js',
-	    publicPath: '/static'
+	    publicPath: '/static',
+	    sourcePrefix: ''
     },
-    resolve: {
-        extensions: [".js", ".jsx", ".css"]
+	amd: {
+        toUrlUndefined: true
+    },
+    node: {
+        fs: 'empty'
+    },
+	resolve: {
+        extensions: [".js", ".jsx", ".css"],
+	    alias: {
+            cesium$: 'cesium/Cesium',
+            cesium: 'cesium/Source'
+        }
     },
     module: {
         rules: [
@@ -41,6 +58,23 @@ const config = {
     },
     plugins: [
         new ExtractTextPlugin('styles.css'),
+        new CopyWebpackPlugin([
+            {
+                from: path.join(cesiumSource, cesiumWorkers),
+                to: 'Workers'
+            },
+            {
+                from: path.join(cesiumSource, 'Assets'),
+                to: 'Assets'
+            },
+            {
+                from: path.join(cesiumSource, 'Widgets'),
+                to: 'Widgets'
+            }
+        ]),
+        new webpack.DefinePlugin({
+            CESIUM_BASE_URL: JSON.stringify('static/')
+        })
     ]
 };
 
