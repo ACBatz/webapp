@@ -1,21 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import Viewer from "cesium/Source/Widgets/Viewer/Viewer";
 import BingMapsImageryProvider from "cesium/Source/Scene/BingMapsImageryProvider";
 import CesiumTerrainProvider from "cesium/Source/Core/CesiumTerrainProvider";
 import Cartesian3 from "cesium/Source/Core/Cartesian3";
-import Cartographic from "cesium/Source/Core/Cartographic";
 import Cesium from "cesium";
+import io from "socket.io-client";
+import { addPoint } from "../actions";
 
 const BING_MAPS_URL = "//dev.virtualearth.net";
 const BING_MAPS_KEY = "ApDPY15x9lCXO5Hw89M1G5Q84_BlKalPbjor8GvKGj2UAnVtzlT5UT-zrylU1e48";
-const STK_TERRAIN_URL = "//assets.agi.com/stk-terrain/world";
+// const STK_TERRAIN_URL = "//assets.agi.com/stk-terrain/world";
 
 class Globe extends React.Component {
-
-	state = {
-        viewerLoaded : false,
-    };
 
 	componentDidMount() {
 		Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmZDdmMDg5MS00MjQwLTRlMDUtOTRiZi0yZmVkNDFjMTFmMDQiLCJpZCI6ODAxNywic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1MTA1MjI5N30.TewDjS5FlMse_gZAWyWhQ8ngnHRu_HgTCBvHl8ECS9g";
@@ -42,13 +40,32 @@ class Globe extends React.Component {
             terrainProvider,
         });
 
-		this.setState({viewerLoaded : true});
+		const socket = io.connect("127.0.0.1:5000");
+		socket.emit('points');
+		socket.on('points', (event) => {
+			this.props.addPoint(event);
+		});
+	}
+
+	shouldComponentUpdate() {
+		const { points } = this.props;
+		this.viewer.entities.removeAll();
+		points.forEach(point => this.addPointOnGlobe(point));
+		return true
 	}
 
 	componentWillUnmount() {
         if(this.viewer) {
             this.viewer.destroy();
         }
+    }
+
+    addPointOnGlobe(point) {
+		this.viewer.entities.add({
+			name: point.name,
+			position: Cartesian3.fromDegrees(point.longitude, point.latitude, point.height),
+			point: { pixelSize: point.size }
+		});
     }
 
 	render() {
@@ -75,10 +92,20 @@ class Globe extends React.Component {
     }
 }
 
-Globe.propTypes = {};
+Globe.propTypes = {
+
+};
 
 function mapStateToProps(state) {
-	return {}
+	return {
+		points: state.globe.points
+	}
 }
 
-export default Globe;
+function mapDispatchToProps(dispatch) {
+	return {
+		addPoint: point => dispatch(addPoint(point)),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Globe);
