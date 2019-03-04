@@ -1,5 +1,5 @@
-export const ADD_POINT = 'ADD_POINT';
+export const ADD_POINTS = 'ADD_POINTS';
 
-export function addPoint(point) {
-	return { type: ADD_POINT, point }
+export function addPoints(points, lines) {
+	return { type: ADD_POINTS, points, lines }
 }

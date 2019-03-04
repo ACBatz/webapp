@@ -7,13 +7,20 @@ import CesiumTerrainProvider from "cesium/Source/Core/CesiumTerrainProvider";
 import Cartesian3 from "cesium/Source/Core/Cartesian3";
 import Cesium from "cesium";
 import io from "socket.io-client";
-import { addPoint } from "../actions";
+import { addPoints } from "../actions";
 
 const BING_MAPS_URL = "//dev.virtualearth.net";
 const BING_MAPS_KEY = "ApDPY15x9lCXO5Hw89M1G5Q84_BlKalPbjor8GvKGj2UAnVtzlT5UT-zrylU1e48";
 // const STK_TERRAIN_URL = "//assets.agi.com/stk-terrain/world";
 
 class Globe extends React.Component {
+
+	constructor() {
+		super();
+		this.state = {
+			t: null
+		};
+	}
 
 	componentDidMount() {
 		Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmZDdmMDg5MS00MjQwLTRlMDUtOTRiZi0yZmVkNDFjMTFmMDQiLCJpZCI6ODAxNywic2NvcGVzIjpbImFzciIsImdjIl0sImlhdCI6MTU1MTA1MjI5N30.TewDjS5FlMse_gZAWyWhQ8ngnHRu_HgTCBvHl8ECS9g";
@@ -25,7 +32,7 @@ class Globe extends React.Component {
 			url: Cesium.IonResource.fromAssetId(1)
 		});
 		this.viewer = new Viewer(this.cesiumContainer, {
-            animation : false,
+            shouldAnimate: true,
             baseLayerPicker : false,
             fullscreenButton : false,
             geocoder : false,
@@ -38,35 +45,128 @@ class Globe extends React.Component {
             scene3DOnly : true,
             imageryProvider,
             terrainProvider,
+			requestRenderMode: true,
         });
 
 		const socket = io.connect("127.0.0.1:5000");
-		socket.emit('points');
-		socket.on('points', (event) => {
-			this.props.addPoint(event);
+		let interval = setInterval(() => this.updatePosition(socket), 1);
+		this.setState({t: interval});
+		socket.on('satellite', (event) => {
+			this.props.addPoints(event.satellites, event.lines);
 		});
 	}
 
-	shouldComponentUpdate() {
-		const { points } = this.props;
-		this.viewer.entities.removeAll();
-		points.forEach(point => this.addPointOnGlobe(point));
-		return true
+	updatePosition(socket) {
+		let dTime = this.julianIntToDate(this.runFunction());
+		if (dTime) {
+			socket.emit('satellite', dTime);
+		}
+	}
+
+	julianIntToDate(julianDate) {
+		if (julianDate) {
+			let date = julianDate.dayNumber;
+			let time = julianDate.secondsOfDay;
+
+			let y = 4716;
+			let v = 3;
+			let j = 1401;
+			let u =  5;
+			let m =  2;
+			let s =  153;
+			let n = 12;
+			let w =  2;
+			let r =  4;
+			let B =  274277;
+			let p =  1461;
+			let C =  -38;
+			let f = date + j + Math.floor((Math.floor((4 * date + B) / 146097) * 3) / 4) + C;
+			let e = r * f + v;
+			let g = Math.floor((e % p) / r);
+			let h = u * g + w;
+			let D = Math.floor((h % s) / u) + 1;
+			let M = ((Math.floor(h / s) + m) % n) + 1;
+			let Y = Math.floor(e / p) - y + Math.floor((n + m - M) / n) ;
+
+			let H = time / 3600;
+			let mm = (H % 1) * 60;
+			let S = time % 60;
+			return new Date(new Date(Y, M - 1, D, Math.floor(H), Math.floor(mm), S).getTime() + (12 * 60 * 60000) - 37000);
+		}
 	}
 
 	componentWillUnmount() {
         if(this.viewer) {
             this.viewer.destroy();
         }
+        clearInterval(this.state.t);
     }
 
     addPointOnGlobe(point) {
-		this.viewer.entities.add({
-			name: point.name,
-			position: Cartesian3.fromDegrees(point.longitude, point.latitude, point.height),
-			point: { pixelSize: point.size }
-		});
+		let set = false;
+	    let values = this.viewer.entities.values.length;
+	    for (let i = 0; i < values; i++) {
+		    if (this.viewer.entities.values[i].id === point.id) {
+			    this.viewer.entities.values[i].position = this.handlePositionChange(point);
+			    set = true;
+			    break;
+		    }
+	    }
+	    if (!set) {
+	        let entity = this.viewer.entities.add(this.generateEntity(point));
+	        entity.position = this.handlePositionChange(point);
+	    }
     }
+
+    handlePositionChange(point) {
+		return Cartesian3.fromDegrees(point.longitude, point.latitude, point.height);
+    }
+
+    removeCesiumEntityById(id) {
+		let values = this.viewer.entities.values;
+		let remove = -1;
+		for (let i = 0; i < values.length; i++) {
+			if (values[i].id == id) {
+				remove = i;
+			}
+		}
+		if (remove !== -1) {
+			this.viewer.entities.remove(values[remove]);
+		}
+    }
+
+    generateEntity(point) {
+		return {
+			id: point.id,
+			point: { pixelSize: point.size }
+		}
+    }
+
+    drawLine(p1, p2) {
+		if (!this.state.drawn) {
+			this.state.drawn = true;
+			this.viewer.entities.add({
+				id: 'line',
+				polyline: {
+					show: true,
+					width: 1.0,
+					arcType: Cesium.ArcType.NONE,
+					positions: {
+						references: ["sat1#position", "sat2#position"]
+					},
+					material: new Cesium.ColorMaterialProperty(Cesium.Color.YELLOW.withAlpha(0.25))
+				}
+			});
+		}
+    }
+
+    runFunction() {
+		if (this.viewer) {
+			return this.viewer.clock.currentTime;
+		}
+		return null;
+    }
+
 
 	render() {
 		const containerStyle = {
@@ -79,6 +179,17 @@ class Globe extends React.Component {
         const widgetStyle = {
             flexGrow : 2
         };
+
+        const { points, lines } = this.props;
+        if (this.viewer) {
+	        points.forEach(point => this.addPointOnGlobe(point));
+	        if (lines) {
+	        	// this.drawLine(points[0], points[1])
+	        } else {
+	        	this.state.drawn = false;
+	        	this.removeCesiumEntityById('line');
+	        }
+        }
 
         return (
             <div className="cesiumGlobeWrapper" style={containerStyle}>
@@ -98,13 +209,14 @@ Globe.propTypes = {
 
 function mapStateToProps(state) {
 	return {
-		points: state.globe.points
+		points: state.globe.points,
+		lines: state.globe.lines
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		addPoint: point => dispatch(addPoint(point)),
+		addPoints: (points, lines) => dispatch(addPoints(points, lines)),
 	}
 }
 

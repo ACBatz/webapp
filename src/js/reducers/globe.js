@@ -1,19 +1,15 @@
-import { ADD_POINT } from "../actions";
+import { ADD_POINTS } from "../actions";
 
 const initialState = {
-	points: [
-		{name: 'test1', longitude: 0, latitude: 0, height: 1000000, size: 10},
-		{name: 'test2', longitude: 100, latitude: 0, height: 1000000, size: 10}
-	]
+	points: [],
+	lines: false
 };
 
 export default (state = initialState, action) => {
-	console.log(action);
-	console.log(state.points);
     switch (action.type) {
-	    case ADD_POINT:
+	    case ADD_POINTS:
     		return {
-			    ...state, points: state.points.concat([action.point])
+			    ...state, points: action.points, lines: action.lines
 		    };
 	    default:
 	    	return state
