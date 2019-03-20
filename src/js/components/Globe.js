@@ -7,6 +7,7 @@ import CesiumTerrainProvider from "cesium/Source/Core/CesiumTerrainProvider";
 import Cartesian3 from "cesium/Source/Core/Cartesian3";
 import Cesium from "cesium";
 import io from "socket.io-client";
+import axios from "axios";
 import { addPoints } from "../actions";
 
 const BING_MAPS_URL = "//dev.virtualearth.net";
@@ -18,7 +19,8 @@ class Globe extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			t: null
+			t: null,
+			drawn: false
 		};
 	}
 
@@ -48,18 +50,16 @@ class Globe extends React.Component {
 			requestRenderMode: true,
         });
 
-		const socket = io.connect("127.0.0.1:5000");
-		let interval = setInterval(() => this.updatePosition(socket), 1);
-		this.setState({t: interval});
-		socket.on('satellite', (event) => {
-			this.props.addPoints(event.satellites, event.lines);
-		});
+		this.setState({t: setInterval(() => this.updatePosition(), 100)});
 	}
 
-	updatePosition(socket) {
+	updatePosition() {
 		let dTime = this.julianIntToDate(this.runFunction());
 		if (dTime) {
-			socket.emit('satellite', dTime);
+			axios.post('http://127.0.0.1:5000/api/satellite', {'time': dTime})
+				.then(response => {
+					this.props.addPoints(response.data.satellites, response.data.lines);
+				});
 		}
 	}
 
@@ -91,7 +91,7 @@ class Globe extends React.Component {
 			let H = time / 3600;
 			let mm = (H % 1) * 60;
 			let S = time % 60;
-			return new Date(new Date(Y, M - 1, D, Math.floor(H), Math.floor(mm), S).getTime() + (12 * 60 * 60000) - 37000);
+			return new Date(new Date(Y, M - 1, D, Math.floor(H), Math.floor(mm), S).getTime() + (6 * 60 * 60000) - 37000);
 		}
 	}
 
@@ -126,13 +126,18 @@ class Globe extends React.Component {
 		let values = this.viewer.entities.values;
 		let remove = -1;
 		for (let i = 0; i < values.length; i++) {
-			if (values[i].id == id) {
+			if (values[i].id === id) {
 				remove = i;
+				break;
 			}
 		}
 		if (remove !== -1) {
 			this.viewer.entities.remove(values[remove]);
 		}
+    }
+
+    removeEntitiesByIndex(indices) {
+		indices.forEach(index => this.viewer.entities.remove(index));
     }
 
     generateEntity(point) {
@@ -142,21 +147,34 @@ class Globe extends React.Component {
 		}
     }
 
-    drawLine(p1, p2) {
-		if (!this.state.drawn) {
-			this.state.drawn = true;
-			this.viewer.entities.add({
-				id: 'line',
-				polyline: {
-					show: true,
-					width: 1.0,
-					arcType: Cesium.ArcType.NONE,
-					positions: {
-						references: ["sat1#position", "sat2#position"]
-					},
-					material: new Cesium.ColorMaterialProperty(Cesium.Color.YELLOW.withAlpha(0.25))
+    addLinesOnGlobe(lines) {
+		if (lines.length > 0) {
+			const collection = this.viewer.entities;
+			if (collection.values.length > 1) {
+				this.removeCesiumEntityById('line');
+				this.viewer.entities.add({
+					id: 'line',
+					polyline: {
+						show: true,
+						width: 2.0,
+						arcType: Cesium.ArcType.NONE,
+						positions: new Cesium.PositionPropertyArray([
+							new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('-')[0], ['position']),
+							new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('-')[1], ['position']),
+						]),
+						material: new Cesium.ColorMaterialProperty(Cesium.Color.YELLOW.withAlpha(0.25))
+					}
+				});
+			}
+		} else {
+			let indices = [];
+			let values = this.viewer.entities.values;
+			for(let i = 0; i < values.length; i++) {
+				if (values[i].id && values[i].id.includes('line')) {
+					indices.push(values[i]);
 				}
-			});
+			}
+			this.removeEntitiesByIndex(indices);
 		}
     }
 
@@ -183,12 +201,7 @@ class Globe extends React.Component {
         const { points, lines } = this.props;
         if (this.viewer) {
 	        points.forEach(point => this.addPointOnGlobe(point));
-	        if (lines) {
-	        	// this.drawLine(points[0], points[1])
-	        } else {
-	        	this.state.drawn = false;
-	        	this.removeCesiumEntityById('line');
-	        }
+	        this.addLinesOnGlobe(lines);
         }
 
         return (
