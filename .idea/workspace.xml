@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/../server/lineofsight.py" line="37" mnemonic="8" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="cca954db-aa6b-4378-a4a8-e070831f3b59" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/css/info-panel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/InfoPanel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/reducers/info_panel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/satellite.log" beforeDir="false" afterPath="$PROJECT_DIR$/satellite.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/satellite.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/globe.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/globe.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/Globe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/Globe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/reducers/globe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/reducers/globe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/simple.czml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +36,9 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/webapp$Flask_____server_app_py_.coverage" NAME="Server Coverage Results" MODIFIED="1550987036838" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/webapp$test.coverage" NAME="test Coverage Results" MODIFIED="1551594306437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../server" />
-    <SUITE FILE_PATH="coverage/webapp$Server.coverage" NAME="Server Coverage Results" MODIFIED="1553060044790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/webapp$test.coverage" NAME="test Coverage Results" MODIFIED="1554093343992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../server" />
+    <SUITE FILE_PATH="coverage/webapp$Server.coverage" NAME="Server Coverage Results" MODIFIED="1554656937433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../server" />
+    <SUITE FILE_PATH="coverage/webapp$spacetrackservice.coverage" NAME="spacetrackservice Coverage Results" MODIFIED="1553574975585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../server" />
     <SUITE FILE_PATH="coverage/webapp$satellite.coverage" NAME="satellite Coverage Results" MODIFIED="1553058069060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../server" />
   </component>
   <component name="FileEditorManager">
@@ -26,38 +46,11 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../server/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Globe.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/js/components/Globe.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="176" column="33" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
+            <state relative-caret-position="130">
+              <caret line="108" column="43" lean-forward="true" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/actions/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -65,47 +58,74 @@
       <file leaf-file-name="satellite.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../server/satellite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="221">
+              <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spacetrackservice.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../server/spacetrackservice.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../server/venv/Lib/site-packages/sgp4/model.py">
+      <file leaf-file-name="Globe.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/components/Globe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="17">
+              <caret line="191" column="19" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="propagation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../server/venv/Lib/site-packages/sgp4/propagation.py">
+      <file leaf-file-name="InfoPanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/components/InfoPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32232">
-              <caret line="1896" selection-start-line="1896" selection-end-line="1896" />
+            <state relative-caret-position="391">
+              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../server/test.py">
+      <file leaf-file-name="lineofsight.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../server/lineofsight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="82" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
+            <state relative-caret-position="238">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globe.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/reducers/globe.js">
+      <file leaf-file-name="info-panel.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/css/info-panel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="33" selection-start-column="33" selection-end-column="33" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="station.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../server/station.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="16" column="30" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -115,21 +135,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Cartesian3</find>
-      <find>DefinePlugin</find>
-      <find>DefinePlu</find>
-      <find>webpack.Define</find>
-      <find>resolve</find>
-      <find>webpack</find>
-      <find>cesium</find>
       <find>Cesium</find>
       <find>cesium-widget</find>
       <find>CesiumWidget</find>
@@ -139,17 +152,35 @@
       <find>'</find>
       <find>fromDegr</find>
       <find>this.addP</find>
-      <find>console.log</find>
       <find>czml</find>
       <find>polyline</find>
       <find>Satellite/Geoeye1</find>
       <find>nan</find>
       <find>update</find>
       <find />
+      <find>satellite</find>
+      <find>sat</find>
+      <find>Globe</find>
+      <find>cesiumGlobeWrapper</find>
+      <find>logging.debug</find>
+      <find>SatelliteFilter</find>
+      <find>points</find>
+      <find>300000</find>
+      <find>forEach</find>
+      <find>console.log</find>
+      <find>request</find>
+      <find>MICROSAT-R</find>
+      <find>scale</find>
+      <find>LEMUR</find>
+      <find>NaN</find>
     </findStrings>
     <replaceStrings>
       <replace>Globe</replace>
       <replace>&quot;</replace>
+      <replace>SatelliteFilter</replace>
+      <replace>print</replace>
+      <replace>App</replace>
+      <replace>satellites</replace>
     </replaceStrings>
     <dirStrings>
       <dir>B:\UCCS\Web\cs5260\server\static</dir>
@@ -162,24 +193,40 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../server/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/css/globe.css" />
         <option value="$PROJECT_DIR$/src/js/App.js" />
         <option value="$PROJECT_DIR$/src/js/store/index.js" />
-        <option value="$PROJECT_DIR$/src/js/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/js/index.js" />
         <option value="$PROJECT_DIR$/src/js/simple.czml" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/../server/test.py" />
         <option value="$PROJECT_DIR$/../server/venv/Lib/site-packages/sgp4/propagation.py" />
-        <option value="$PROJECT_DIR$/src/js/reducers/globe.js" />
-        <option value="$PROJECT_DIR$/src/js/actions/index.js" />
-        <option value="$PROJECT_DIR$/../server/satellite.log" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/satellite.log" />
+        <option value="$PROJECT_DIR$/../server/satellite.log" />
+        <option value="$PROJECT_DIR$/node_modules/cesium/Source/Widgets/CesiumWidget/CesiumWidget.css" />
+        <option value="$PROJECT_DIR$/src/css/satellite-filter.css" />
+        <option value="$PROJECT_DIR$/src/js/index.js" />
+        <option value="$PROJECT_DIR$/src/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/../server/templates/index.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/../server/test.py" />
+        <option value="$PROJECT_DIR$/src/js/reducers/satellite_filter.js" />
+        <option value="$PROJECT_DIR$/../server/active.txt" />
+        <option value="$PROJECT_DIR$/../server/station.py" />
+        <option value="$PROJECT_DIR$/src/js/components/SatelliteFilter.js" />
+        <option value="$PROJECT_DIR$/src/js/reducers/index.js" />
+        <option value="$PROJECT_DIR$/src/js/reducers/info_panel.js" />
+        <option value="$PROJECT_DIR$/src/css/info-panel.css" />
+        <option value="$PROJECT_DIR$/src/js/components/App.js" />
+        <option value="$PROJECT_DIR$/src/css/globe.css" />
+        <option value="$PROJECT_DIR$/src/css/app.css" />
+        <option value="$PROJECT_DIR$/src/js/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/js/reducers/globe.js" />
+        <option value="$PROJECT_DIR$/../server/timekeeper.py" />
+        <option value="$PROJECT_DIR$/src/js/components/Globe.js" />
+        <option value="$PROJECT_DIR$/src/js/components/InfoPanel.js" />
+        <option value="$PROJECT_DIR$/../server/lineofsite.py" />
         <option value="$PROJECT_DIR$/../server/satellite.py" />
         <option value="$PROJECT_DIR$/../server/app.py" />
-        <option value="$PROJECT_DIR$/src/js/components/Globe.js" />
+        <option value="$PROJECT_DIR$/../server/lineofsight.py" />
+        <option value="$PROJECT_DIR$/../server/spacetrackservice.py" />
       </list>
     </option>
   </component>
@@ -213,11 +260,21 @@
           <expand>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -237,17 +294,18 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="B:\UCCS\Web\cs5260\webapp\src\img" />
-      <recent name="B:\UCCS\Web\cs5260\webapp\src\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\UCCS\Web\cs5260\webapp\src\js\reducers" />
       <recent name="B:\UCCS\Web\cs5260\webapp" />
       <recent name="B:\UCCS\Web\cs5260\server\static" />
       <recent name="B:\UCCS\Web\cs5260\server\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\UCCS\Web\cs5260\webapp\src\img" />
+      <recent name="B:\UCCS\Web\cs5260\webapp\src\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -282,6 +340,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="spacetrackservice" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../server/spacetrackservice.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -310,7 +387,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../server" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -331,12 +408,14 @@
       <item itemvalue="Flask server.Server" />
       <item itemvalue="Python.satellite" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.spacetrackservice" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Flask server.Server" />
-        <item itemvalue="Python.satellite" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.spacetrackservice" />
+        <item itemvalue="Python.satellite" />
       </list>
     </recent_temporary>
   </component>
@@ -355,24 +434,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32963374" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32852387" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32963374" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21215352" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.31520534" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23614073" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.1684435" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.17377399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955604" />
-      <window_info anchor="bottom" id="TypeScript" order="8" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.509434" />
+      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32963374" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -380,6 +458,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="8" weight="0.32963374" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +469,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="79" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -415,181 +494,53 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>satells[0].get_propagation(time)[0],</expression-string>
+        <expression-string>np.arccos(np.clip(np.dot(v1_u, v2_u), -1.0, 1.0)) * 180 / math.pi</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>np.arccos(np.clip(np.dot(v1_u, v2_u), -1.0, 1.0))</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>angle_between(v1, v2)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>math.acos(res) * 180 / math.pi</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>math.acos(res)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>math.acos(res) / (180 / math.pi)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>math.acos(res) * (180 / math.pi)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>math.isnan(latitude)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string />
+        <expression-string>longitude == float('nan')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/Globe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../server/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="128" selection-start-line="30" selection-start-column="128" selection-end-line="30" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/DataSources/EllipsoidGraphics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/DataSources/CorridorGeometryUpdater.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/webpack/lib/webpack.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="103" column="10" lean-forward="true" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../server/static/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="144" column="67303" selection-start-line="144" selection-start-column="67296" selection-end-line="144" selection-end-column="67303" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-scripts/config/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-493">
-          <caret line="526" column="67" selection-start-line="526" selection-start-column="67" selection-end-line="526" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/main.js" />
-    <entry file="file://$PROJECT_DIR$/BAK.js" />
-    <entry file="file://$PROJECT_DIR$/build/index.html" />
-    <entry file="file://$PROJECT_DIR$/../server/static/Widgets/Viewer/Viewer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="1598" column="18" selection-start-line="1598" selection-start-column="12" selection-end-line="1598" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../server/static/Widgets/CesiumWidget/CesiumWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/resium/dist/types/src/Viewer.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="71" column="39" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/resium/dist/types/src/CesiumWidget.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cesium/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cesium/Build/Cesium/Cesium.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8823" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/Widgets/Viewer/Viewer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="356" column="13" selection-start-line="356" selection-start-column="13" selection-end-line="356" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../server/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/Core/Cartesian2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -601,27 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="812" column="48" selection-start-line="812" selection-start-column="40" selection-end-line="812" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/css/globe.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -639,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/Cesium.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -660,13 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../server/venv/Lib/site-packages/engineio/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -674,13 +590,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/simple.czml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9231">
-          <caret line="120" column="11" selection-start-line="120" selection-start-column="11" selection-end-line="120" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/simple.czml" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/math.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -702,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../server/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="82" selection-start-line="2" selection-start-column="82" selection-end-line="2" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../server/venv/Lib/site-packages/sgp4/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -720,20 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32232">
           <caret line="1896" selection-start-line="1896" selection-end-line="1896" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/reducers/globe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -749,16 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/satellite.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../server/venv/Lib/site-packages/sgp4/earth_gravity.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -773,29 +652,237 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../server/satellite.py">
+    <entry file="file://$PROJECT_DIR$/satellite.log" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/multiprocessing/pool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="262" column="8" selection-start-line="262" selection-start-column="8" selection-end-line="262" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/satellite.log" />
+    <entry file="file://$PROJECT_DIR$/src/js/App.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/Widgets/CesiumWidget/CesiumWidget.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cesium/Source/Widgets/widgets.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/axios/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="128" column="14" selection-start-line="128" selection-start-column="14" selection-end-line="128" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/static/bundle.js">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="972">
+          <caret line="790" selection-start-line="790" selection-end-line="790" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/active.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65331">
+          <caret line="3843" column="5" selection-start-line="3843" selection-end-line="3843" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/reducers/info_panel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/globe.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/reducers/globe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/timekeeper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/InfoPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/css/info-panel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/sgp4/propagation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" selection-start-line="22" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/sgp4/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/Globe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="191" column="19" selection-start-line="191" selection-start-column="19" selection-end-line="191" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../server/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="31" column="69" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+        <state relative-caret-position="130">
+          <caret line="108" column="43" lean-forward="true" selection-start-line="108" selection-start-column="43" selection-end-line="108" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/Globe.js">
+    <entry file="file://$PROJECT_DIR$/../server/station.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="176" column="33" selection-start-line="176" selection-start-column="33" selection-end-line="176" selection-end-column="33" />
+        <state relative-caret-position="221">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/satellite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/lineofsight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../server/spacetrackservice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

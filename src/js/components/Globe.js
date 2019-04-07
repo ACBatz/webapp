@@ -6,13 +6,18 @@ import BingMapsImageryProvider from "cesium/Source/Scene/BingMapsImageryProvider
 import CesiumTerrainProvider from "cesium/Source/Core/CesiumTerrainProvider";
 import Cartesian3 from "cesium/Source/Core/Cartesian3";
 import Cesium from "cesium";
-import io from "socket.io-client";
 import axios from "axios";
-import { addPoints } from "../actions";
+import { addPoints, setTime } from "../actions";
+
+import "cesium/Source/Widgets/widgets.css";
+import buildModelUrl from "cesium/Source/Core/buildModuleUrl";
+buildModelUrl.setBaseUrl('./static/cesium');
 
 const BING_MAPS_URL = "//dev.virtualearth.net";
 const BING_MAPS_KEY = "ApDPY15x9lCXO5Hw89M1G5Q84_BlKalPbjor8GvKGj2UAnVtzlT5UT-zrylU1e48";
 // const STK_TERRAIN_URL = "//assets.agi.com/stk-terrain/world";
+
+require('../../css/globe.css');
 
 class Globe extends React.Component {
 
@@ -20,7 +25,8 @@ class Globe extends React.Component {
 		super();
 		this.state = {
 			t: null,
-			drawn: false
+			drawn: false,
+			flag: false
 		};
 	}
 
@@ -50,16 +56,21 @@ class Globe extends React.Component {
 			requestRenderMode: true,
         });
 
-		this.setState({t: setInterval(() => this.updatePosition(), 100)});
+		this.setState({t: setInterval(() => this.updatePosition(), 20)});
 	}
 
 	updatePosition() {
-		let dTime = this.julianIntToDate(this.runFunction());
-		if (dTime) {
-			axios.post('http://127.0.0.1:5000/api/satellite', {'time': dTime})
-				.then(response => {
-					this.props.addPoints(response.data.satellites, response.data.lines);
-				});
+		if (this.state.flag === false) {
+			this.state.flag = true;
+			let dTime = this.julianIntToDate(this.runFunction());
+			this.props.setTime(dTime);
+			if (dTime) {
+				axios.post('http://127.0.0.1:5000/api/satellite', {'time': dTime})
+					.then(response => {
+						this.props.addPoints(response.data.satellites, response.data.lines, response.data.stations);
+						this.state.flag = false;
+					});
+			}
 		}
 	}
 
@@ -100,6 +111,15 @@ class Globe extends React.Component {
             this.viewer.destroy();
         }
         clearInterval(this.state.t);
+    }
+
+    addPointsToGlobe(point) {
+		this.viewer.entities.removeAll();
+		point.forEach(point => this.viewer.entities.add({
+			id: point.id,
+			position: Cartesian3.fromDegrees(point.longitude, point.latitude, point.height),
+			point: { pixelSize: point.size }
+		}));
     }
 
     addPointOnGlobe(point) {
@@ -148,34 +168,58 @@ class Globe extends React.Component {
     }
 
     addLinesOnGlobe(lines) {
-		if (lines.length > 0) {
-			const collection = this.viewer.entities;
-			if (collection.values.length > 1) {
-				this.removeCesiumEntityById('line');
+		let ids = this.viewer.entities.values.map(value => value['id']).filter(id => id.startsWith('line-'));
+		console.log(ids);
+		lines.forEach(line => {
+			console.log(line['id']);
+			if (!ids.includes('line-' + line['id'])) {
 				this.viewer.entities.add({
-					id: 'line',
+					id: 'line-' + line['id'],
 					polyline: {
 						show: true,
 						width: 2.0,
 						arcType: Cesium.ArcType.NONE,
 						positions: new Cesium.PositionPropertyArray([
-							new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('-')[0], ['position']),
-							new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('-')[1], ['position']),
+							new Cesium.ReferenceProperty(this.viewer.entities, line['id'].split('|')[0], ['position']),
+							new Cesium.ReferenceProperty(this.viewer.entities, line['id'].split('|')[1], ['position']),
 						]),
 						material: new Cesium.ColorMaterialProperty(Cesium.Color.YELLOW.withAlpha(0.25))
 					}
 				});
 			}
-		} else {
-			let indices = [];
-			let values = this.viewer.entities.values;
-			for(let i = 0; i < values.length; i++) {
-				if (values[i].id && values[i].id.includes('line')) {
-					indices.push(values[i]);
-				}
-			}
-			this.removeEntitiesByIndex(indices);
-		}
+			ids = ids.filter(function(value, index, arr) {
+					return value !== 'line-' + line['id'];
+				});
+		});
+		ids.forEach(id => this.removeCesiumEntityById(id));
+		// if (lines.length > 0) {
+		// 	const collection = this.viewer.entities;
+		// 	if (collection.values.length > 1) {
+		// 		this.removeCesiumEntityById('line');
+		// 		this.viewer.entities.add({
+		// 			id: 'line',
+		// 			polyline: {
+		// 				show: true,
+		// 				width: 2.0,
+		// 				arcType: Cesium.ArcType.NONE,
+		// 				positions: new Cesium.PositionPropertyArray([
+		// 					new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('|')[0], ['position']),
+		// 					new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('|')[1], ['position']),
+		// 				]),
+		// 				material: new Cesium.ColorMaterialProperty(Cesium.Color.YELLOW.withAlpha(0.25))
+		// 			}
+		// 		});
+		// 	}
+		// } else {
+		// 	let indices = [];
+		// 	let values = this.viewer.entities.values;
+		// 	for(let i = 0; i < values.length; i++) {
+		// 		if (values[i].id && values[i].id.includes('line')) {
+		// 			indices.push(values[i]);
+		// 		}
+		// 	}
+		// 	this.removeEntitiesByIndex(indices);
+		// }
     }
 
     runFunction() {
@@ -198,20 +242,26 @@ class Globe extends React.Component {
             flexGrow : 2
         };
 
-        const { points, lines } = this.props;
-        if (this.viewer) {
-	        points.forEach(point => this.addPointOnGlobe(point));
-	        this.addLinesOnGlobe(lines);
+        const { satellites, lines, stations } = this.props;
+        if (this.viewer && satellites) {
+        	// this.addPointsToGlobe(satellites);
+	        satellites.forEach(point => this.addPointOnGlobe(point));
+	        stations.forEach(point => this.addPointOnGlobe(point));
+	        if (lines) {
+		        this.addLinesOnGlobe(lines);
+	        }
         }
 
         return (
-            <div className="cesiumGlobeWrapper" style={containerStyle}>
-                <div
-                    className="cesiumWidget"
-                    ref={ element => this.cesiumContainer = element }
-                    style={widgetStyle}>
-                </div>
-            </div>
+        	<div className='cesium-root'>
+	            <div className="cesiumGlobeWrapper" style={containerStyle}>
+	                <div
+	                    className="cesiumWidget"
+	                    ref={ element => this.cesiumContainer = element }
+	                    style={widgetStyle}>
+	                </div>
+	            </div>
+	        </div>
         );
     }
 }
@@ -222,14 +272,16 @@ Globe.propTypes = {
 
 function mapStateToProps(state) {
 	return {
-		points: state.globe.points,
-		lines: state.globe.lines
+		satellites: state.globe.satellites,
+		stations: state.globe.stations,
+		lines: state.globe.lines,
 	}
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		addPoints: (points, lines) => dispatch(addPoints(points, lines)),
+		addPoints: (satellites, lines, stations) => dispatch(addPoints(satellites, lines, stations)),
+		setTime: time => dispatch(setTime(time))
 	}
 }
 

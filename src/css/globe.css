@@ -3,5 +3,7 @@
 }
 
 .cesium-widget canvas {
-    width: 100%;
+    height: 95vh;
+    max-height: 100vh;
+    max-width: 80vw;
 }
