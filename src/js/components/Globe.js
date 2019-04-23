@@ -26,7 +26,8 @@ class Globe extends React.Component {
 		this.state = {
 			t: null,
 			drawn: false,
-			flag: false
+			flag: false,
+			hostname: 'http://127.0.0.1:5000'
 		};
 	}
 
@@ -65,7 +66,7 @@ class Globe extends React.Component {
 			let dTime = this.julianIntToDate(this.runFunction());
 			this.props.setTime(dTime);
 			if (dTime) {
-				axios.post('http://127.0.0.1:5000/api/satellite', {'time': dTime})
+				axios.post(this.state.hostname + '/api/satellite', {'time': dTime})
 					.then(response => {
 						this.props.addPoints(response.data.satellites, response.data.lines, response.data.stations);
 						this.state.flag = false;
@@ -192,34 +193,6 @@ class Globe extends React.Component {
 				});
 		});
 		ids.forEach(id => this.removeCesiumEntityById(id));
-		// if (lines.length > 0) {
-		// 	const collection = this.viewer.entities;
-		// 	if (collection.values.length > 1) {
-		// 		this.removeCesiumEntityById('line');
-		// 		this.viewer.entities.add({
-		// 			id: 'line',
-		// 			polyline: {
-		// 				show: true,
-		// 				width: 2.0,
-		// 				arcType: Cesium.ArcType.NONE,
-		// 				positions: new Cesium.PositionPropertyArray([
-		// 					new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('|')[0], ['position']),
-		// 					new Cesium.ReferenceProperty(this.viewer.entities, lines[0]['id'].split('|')[1], ['position']),
-		// 				]),
-		// 				material: new Cesium.ColorMaterialProperty(Cesium.Color.YELLOW.withAlpha(0.25))
-		// 			}
-		// 		});
-		// 	}
-		// } else {
-		// 	let indices = [];
-		// 	let values = this.viewer.entities.values;
-		// 	for(let i = 0; i < values.length; i++) {
-		// 		if (values[i].id && values[i].id.includes('line')) {
-		// 			indices.push(values[i]);
-		// 		}
-		// 	}
-		// 	this.removeEntitiesByIndex(indices);
-		// }
     }
 
     runFunction() {
